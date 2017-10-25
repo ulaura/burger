@@ -1,1 +1,31 @@
-<h1>EAT DA BURGER!!</h1>
+<div class="container">
+	<h1 class="text-center">EAT DA BURGER!!</h1>
+
+	<!-- Row for list of burgers entered -->
+	<div class="row">
+		<div class="col-md-5 burger-box" id="not-devoured">
+
+		</div>
+
+		<!-- Forcing a space between the two columns -->
+		<div class="col-md-2" id="blank">
+		</div>
+
+		<div class="col-md-5 burger-box" id="devoured">
+
+		</div>
+	</div>
+
+	<!-- Row for textbox to enter in new burger -->
+	<div class="row justify-content-center bottom">
+		<div class="col-md-5">
+			<div class="form-group">
+				<input class="form-control form-control-lg" type="text" name="burger_name" devoured="0" id="burgerInfo" placeholder="Type in a burger here!">
+			</div>
+
+			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
+			<p class="text-center directions">Type in the name of a burger you want to eat, then click "submit".</p>
+		</div>
+	</div>
+</div>

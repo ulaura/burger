@@ -1,0 +1,24 @@
+.container {
+	border: 3px solid purple;
+}
+.burger-box {
+	position: relative;
+	border: 3px solid black;
+}
+
+.bottom {
+	margin-top: 10px;
+	border: 3px solid black;
+	bottom: 20px;
+}
+
+.btn {
+	display: block;
+	margin: 0 auto;
+	
+}
+
+/* text below submit button */
+.directions {
+	font-size: 12px;
+}
