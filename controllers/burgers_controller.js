@@ -41,7 +41,7 @@ router.post("/api/burgers", function(req, res) {
 // PUT request updates data.
 // This is where the burger goes from "not devoured" to "devoured"
 router.put("/api/burgers/:id", function(req, res) {
-	var burgerId = "id = " + req.params.id;
+	var burgerId = "id = " + req.body.id;
 
 	console.log("Burger status changed for ", burgerId);
 

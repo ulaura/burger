@@ -1,8 +1,6 @@
 // Front end JS and jQuery
 
 $(function() {
-	
-	
 	// Handling the user entering a new burger (POST)
 	$(".create-form").on("submit", function(event) {
 		event.preventDefault();
@@ -25,4 +23,25 @@ $(function() {
 			}
 		);
 	});
+
+	// When the user clicks the "Devour It!!" button (PUT)
+	$(".devourBurgerButton").on("click", function(event) {
+
+		var changeBurger = {
+			id: $(this).data("id"),
+			devoured: true
+		};
+
+		$.ajax("/api/burgers/:id", {
+			type: "PUT",
+			data: changeBurger
+		}).then(
+			function () {
+				console.log("Updated burger status.");
+				location.reload();
+			}
+		);
+	});
+	
+
 });

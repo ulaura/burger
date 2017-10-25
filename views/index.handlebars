@@ -3,25 +3,31 @@
 
 	<!-- Row for list of burgers entered -->
 	<div class="row">
+		<!-- Left list: Burgers entered, but not devoured yet -->
 		<div class="col-md-5 burger-box" id="not-devoured">
 			<!-- Pass in data from server.js -->
-			<ol class="list-group">
+			<ul class="list-group">
 			  {{#each burgers}}
-			  	<li class="list-group-item">
-			  			<span class="label" id={{this.id}}>{{this.id}}. {{this.burger_name}}</span>
-
-			      	<button type="button" data-id="{{this.id}}" class="devourBurgerButton">Devour It!!</button>
-			     </li>
+			  	{{#unless devoured}}
+						{{> burgers/burgerNotDevoured-block}}
+					{{/unless}}
 			  {{/each}}
-			</ol>
+			</ul>
 		</div>
 
 		<!-- Forcing a space between the two columns -->
 		<div class="col-md-2" id="blank">
 		</div>
 
+		<!-- Right list: Burgers devoured -->
 		<div class="col-md-5 burger-box" id="devoured">
-
+			<ul class="list-group">
+				{{#each burgers}}
+					{{#if devoured}}
+						{{> burgers/burgerDevoured-block}}
+					{{/if}}
+				{{/each}}
+			</ul>
 		</div>
 	</div>
 
