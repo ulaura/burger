@@ -3,27 +3,32 @@ var express = require("express");
 var methodOver = require("method-override");
 var bodyParser = require("body-parser");
 
-//creating the express server
+// creating the express server
 var app = express();
 
-//setting up the port
-//this means the server will either listen to the port assigned to it (like when hosted on Heroku),
-//OR it will listen to port 3000 (like when running localhost:3000 on an individual computer)
+// setting up the port
+// this means the server will either listen to the port assigned to it (like when hosted on Heroku),
+// OR it will listen to port 3000 (like when running localhost:3000 on an individual computer)
 var PORT = process.env.PORT || 3000;
 
-//Handling data parsing with Express
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// Handling data parsing with Express
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Set Handlebars, default layout, and view engine
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// The routes for the server.
-// It's not what's seen below. I left them in for reference.
-// I need to change these!!
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
 
-// require("./app/routing/apiRoutes")(app);
-// require("./app/routing/htmlRoutes")(app);
+app.use("/", routes);
 
-//The listener. Starts the server. 
+// The listener. Starts the server. 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
