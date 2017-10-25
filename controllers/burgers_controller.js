@@ -18,8 +18,6 @@ router.get("/", function(req, res) {
 		var handlebarsObject = {
 			burgers: data
 		};
-		// to so us the result on the back end
-		console.log(handlebarsObject); 
 
 		// to make the result appear on the index.handlebars page
 		res.render("index", handlebarsObject);
