@@ -43,7 +43,7 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
 	var burgerId = "id = " + req.params.id;
 
-	console.log("Burger status changed for ", devoured);
+	console.log("Burger status changed for ", burgerId);
 
 	burger.updateOne({
 		devoured: req.body.devoured

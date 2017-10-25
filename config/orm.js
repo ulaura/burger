@@ -14,9 +14,18 @@ var orm = {
 			cb(result);
 		});
 	},
-	insertOne: function(tableInput, valOfCol, cb) {
-		var queryString = "INSERT INTO ?? VALUES(?)";
-		connection.query(queryString, [tableInput, valOfCol], function(err, result) {
+	insertOne: function(tableInput, valOfCol, valOfOtherCol, cb) {
+		var queryString = "INSERT INTO " + tableInput;
+		queryString += " (";
+		queryString += valOfCol.toString();
+		queryString += ") "
+		queryString += "VALUES (";
+		queryString += "?"
+		queryString += ") ";
+
+		console.log(queryString);
+
+		connection.query(queryString, [valOfOtherCol], function(err, result) {
 			if (err) {
 				throw err;
 			}
