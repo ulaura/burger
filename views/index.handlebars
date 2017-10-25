@@ -4,7 +4,16 @@
 	<!-- Row for list of burgers entered -->
 	<div class="row">
 		<div class="col-md-5 burger-box" id="not-devoured">
+			<!-- Pass in data from server.js -->
+			<ol class="list-group">
+			  {{#each burgers}}
+			  	<li class="list-group-item">
+			  			<span class="label" id={{this.id}}>{{this.id}}. {{this.burger_name}}</span>
 
+			      	<button type="button" data-id="{{this.id}}" class="devourBurgerButton">Devour It!!</button>
+			     </li>
+			  {{/each}}
+			</ol>
 		</div>
 
 		<!-- Forcing a space between the two columns -->

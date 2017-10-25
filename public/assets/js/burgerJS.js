@@ -1,7 +1,9 @@
 // Front end JS and jQuery
 
-// Handling the user entering a new burger
 $(function() {
+	
+	
+	// Handling the user entering a new burger (POST)
 	$(".create-form").on("submit", function(event) {
 		event.preventDefault();
 
