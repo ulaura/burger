@@ -1,14 +1,21 @@
+/* Extra CSS to style index */
+/*Most of it is borders to help me see what's going on*/
+/*I commented those out when I finsihed*/
+
+/*
 .container {
 	border: 3px solid purple;
 }
+*/
+
 .burger-box {
 	position: relative;
-	border: 3px solid black;
+	/*border: 3px solid black;*/
 }
 
 .bottom {
 	margin-top: 10px;
-	border: 3px solid black;
+	/*border: 3px solid black;*/
 	bottom: 20px;
 }
 
@@ -23,6 +30,7 @@
 	font-size: 12px;
 }
 
+/*
 li {
 	border: 2px solid red;
 }
@@ -30,8 +38,19 @@ li {
 span {
 	border: 2px solid green;
 }
+*/
 
 .devourBurgerButton {
 	position: absolute;
-	right: 0;
+	right: 5px;
+}
+
+body {
+	background-color: pink;
+
+}
+
+h1 {
+	font-size: 60px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
