@@ -41,12 +41,13 @@ router.post("/api/burgers", function(req, res) {
 // PUT request updates data.
 // This is where the burger goes from "not devoured" to "devoured"
 router.put("/api/burgers/:id", function(req, res) {
-	var burgerId = "id = " + req.body.id;
+	var burgerId = "id = " + req.params.id;
 
-	console.log("Burger status changed for ", burgerId);
+	console.log("Burger status changed for", burgerId);
 
 	burger.updateOne({
-		devoured: req.body.devoured
+		// Force devoured = 1, as in {devoured: true}
+		devoured: 1
 	}, burgerId, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

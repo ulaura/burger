@@ -26,13 +26,12 @@ $(function() {
 
 	// When the user clicks the "Devour It!!" button (PUT)
 	$(".devourBurgerButton").on("click", function(event) {
-
+		var id = $(this).data("id")
 		var changeBurger = {
-			id: $(this).data("id"),
-			devoured: true
+			devoured: 0
 		};
 
-		$.ajax("/api/burgers/:id", {
+		$.ajax("/api/burgers/" + id, {
 			type: "PUT",
 			data: changeBurger
 		}).then(
