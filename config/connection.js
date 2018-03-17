@@ -15,6 +15,6 @@ else {
     password : 'Database!DreamGirl28',
     database : 'burgers_db'
   });
-}
+};
 
 module.exports = connection; 
