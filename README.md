@@ -8,7 +8,6 @@ Eat Da Burger!! is an app that allows users to input burger names and "devour" e
 Eat Da Burger!! is hosted online [here](http://ulaura-eat-da-burger.herokuapp.com/).
 
 ## Built With
-* Express
 * Node
 * JavaScript and jQuery
 * Bootstrap
